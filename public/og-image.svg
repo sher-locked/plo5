@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Dark gradient background -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge> 
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  
+  <!-- Main PLO5 Title -->
+  <text x="600" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="#ffffff">PLO</text>
+  <text x="780" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="#3b82f6" filter="url(#glow)">5</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" fill="#94a3b8">Mobile Trainer</text>
+  
+  <!-- Description -->
+  <text x="600" y="350" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#e2e8f0">Master Pot-Limit Omaha 5-Card</text>
+  <text x="600" y="390" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#cbd5e1">Practice wrap counting and equity estimation</text>
+  
+  <!-- Feature highlights -->
+  <text x="300" y="480" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#3b82f6">⚡ Wrap Counter</text>
+  <text x="600" y="480" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#3b82f6">📱 Mobile-First</text>
+  <text x="900" y="480" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#3b82f6">🎯 Interactive Quizzes</text>
+  
+  <!-- Bottom tagline -->
+  <text x="600" y="550" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#64748b">Built by Anush with Cursor</text>
+</svg> 

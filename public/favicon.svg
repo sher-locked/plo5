@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Dark background circle -->
+  <circle cx="32" cy="32" r="32" fill="#111111"/>
+  
+  <!-- PLO text in white -->
+  <text x="14" y="40" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ffffff">PLO</text>
+  
+  <!-- 5 in blue -->
+  <text x="48" y="40" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#3b82f6">5</text>
+  
+  <!-- Subtle blue glow behind the 5 -->
+  <circle cx="52" cy="32" r="8" fill="#3b82f6" opacity="0.2"/>
+</svg> 
