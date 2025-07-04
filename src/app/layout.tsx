@@ -18,8 +18,8 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "PLO5 - Mobile Trainer",
-  description: "Master Pot-Limit Omaha 5-Card with our mobile-first training app. Practice wrap counting, equity estimation, and post-flop decision making.",
+  title: "PLO5",
+  description: "Built by Anush with Cursor",
   keywords: ["PLO5", "poker", "training", "omaha", "wrap counter", "equity", "mobile"],
   authors: [{ name: "Anush" }],
   creator: "Anush",
@@ -31,16 +31,16 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://plo5.vercel.app"),
   openGraph: {
-    title: "PLO5 - Master Pot-Limit Omaha 5-Card",
-    description: "Mobile-first training app for PLO-5 players. Practice wrap counting, equity estimation, and post-flop decision making with interactive quizzes.",
+    title: "PLO5",
+    description: "Built by Anush with Cursor",
     url: "https://plo5.vercel.app",
     siteName: "PLO5 Mobile Trainer",
     images: [
       {
-        url: "/og-image.svg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "PLO5 Mobile Trainer - Master Pot-Limit Omaha 5-Card",
+        alt: "PLO5 Mobile Trainer",
       },
     ],
     locale: "en_US",
@@ -48,9 +48,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PLO5 - Master Pot-Limit Omaha 5-Card",
-    description: "Mobile-first training app for PLO-5 players. Practice wrap counting and equity estimation.",
-    images: ["/og-image.svg"],
+    title: "PLO5",
+    description: "Built by Anush with Cursor",
+    images: ["/og-image.png"],
     creator: "@anush", // Replace with your actual Twitter handle
   },
   robots: {
@@ -67,11 +67,9 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       { url: "/favicon.svg", type: "image/svg+xml" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      // { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
     ],
     other: [
       { rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#3b82f6" },
