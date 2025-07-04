@@ -72,12 +72,13 @@ export function pickRandomFlop(): WrapEntry {
 }
 
 /**
- * Generates quiz options for a given correct answer (original logic)
+ * Generates quiz options for a given correct answer
  */
-export function generateQuizOptions(correctAnswer: number): number[] {
+export function generateQuizOptions(correctAnswer: number, numOptions = 4): number[] {
   const options = new Set<number>();
   options.add(correctAnswer);
 
+  // --- Step 1: Generate 5 options to ensure a good pool of candidates
   let attempts = 0;
   while (options.size < 5 && attempts < 10) {
     const delta = Math.floor(Math.random() * 8) - 4; // between -4 and 3
@@ -89,10 +90,36 @@ export function generateQuizOptions(correctAnswer: number): number[] {
   }
   const commonGaps = [20, 17, 16, 13, 12, 10, 9, 8, 4, 0];
   let i = 0;
-  while(options.size < 5 && i < commonGaps.length) {
-    if(commonGaps[i] > 0) options.add(commonGaps[i]);
+  while (options.size < 5 && i < commonGaps.length) {
+    if (commonGaps[i] > 0 && !options.has(commonGaps[i])) options.add(commonGaps[i]);
     i++;
   }
 
-  return Array.from(options).sort((a, b) => b - a);
+  const allOptions = Array.from(options);
+
+  if (allOptions.length <= numOptions) {
+    return allOptions.sort((a, b) => b - a);
+  }
+
+  // --- Step 2: Intelligently remove the FARTHEST distractor
+  let farthestDistractor = -1;
+  let maxDistance = -1;
+
+  for (const option of allOptions) {
+    if (option === correctAnswer) continue;
+
+    const distance = Math.abs(option - correctAnswer);
+    if (distance > maxDistance) {
+      maxDistance = distance;
+      farthestDistractor = option;
+    }
+  }
+
+  if (farthestDistractor !== -1) {
+    const finalOptions = allOptions.filter(opt => opt !== farthestDistractor);
+    return finalOptions.sort((a, b) => b - a);
+  }
+
+  // Fallback: if something went wrong, just return the first numOptions
+  return allOptions.slice(0, numOptions).sort((a, b) => b - a);
 } 

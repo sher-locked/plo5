@@ -5,3 +5,14 @@ body {
   color: #dedede;
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
+
+/* Hide scrollbar for a cleaner mobile look */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}

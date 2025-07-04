@@ -69,7 +69,7 @@ export default function DrawDetail({ wrap, highlightType = 'none' }: DrawDetailP
   };
 
   return (
-    <div className={`${getShadowClass()} rounded-xl flex flex-col w-full max-w-[240px] p-2.5 gap-2 my-1.5`}>
+    <div className={`${getShadowClass()} rounded-xl flex flex-col flex-shrink-0 w-[240px] p-2.5 gap-2 my-1.5`}>
       {/* Header for Stats */}
       <div className="flex justify-between items-center">
         <span className="text-sm font-semibold font-mono text-white tracking-wide">{wrap.outCount} outs</span>

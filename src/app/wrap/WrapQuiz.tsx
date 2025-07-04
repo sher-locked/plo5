@@ -74,12 +74,12 @@ export default function WrapQuiz({
       <div className="flex flex-col items-center w-full gap-4">
         <div className="text-center">
           <h2 className="text-sm font-semibold font-mono text-gray-300 tracking-wide">
-            Select maximum possible outs on this flop
+            Maximum outs possible on this flop
           </h2>
         </div>
         
         {/* Quiz Options */}
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="grid w-full grid-cols-[repeat(auto-fit,minmax(3.5rem,1fr))] gap-3">
           {current &&
             topWrap &&
             quizOptions.map((num) => {
@@ -104,13 +104,13 @@ export default function WrapQuiz({
                   key={num}
                   disabled={revealed}
                   onClick={() => onGuess(num)}
-                  className={`w-16 h-12 rounded-xl flex items-center justify-center font-bold text-lg tracking-wider transition-all duration-200 border shadow-sm hover:shadow-md ${buttonStyle} ${
+                  className={`h-10 w-full rounded-xl flex items-center justify-center font-bold tracking-wider transition-all duration-200 border shadow-sm hover:shadow-md ${buttonStyle} ${
                     !revealed
                       ? "hover:scale-105 active:scale-95"
                       : "cursor-not-allowed"
                   }`}
                 >
-                  <span className="uppercase">{num}</span>
+                  <span className="uppercase text-base">{num}</span>
                 </button>
               );
             })}
@@ -133,7 +133,7 @@ export default function WrapQuiz({
             </h3>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-6 justify-items-center max-w-[500px] md:max-w-[800px] mx-auto">
+          <div className="flex overflow-x-auto sm:grid sm:grid-cols-2 md:grid-cols-3 sm:overflow-visible gap-4 sm:gap-6 sm:justify-items-center max-w-[500px] md:max-w-[800px] mx-auto pb-4 sm:pb-0 no-scrollbar px-4 sm:px-0 overscroll-x-contain">
             {(() => {
               // Find max values across all wraps
               const maxTotalOuts = Math.max(...displayWraps.map(w => w.outCount));
